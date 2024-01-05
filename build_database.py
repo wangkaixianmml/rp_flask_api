@@ -41,7 +41,8 @@ with app.app_context():
             new_person.notes.append(
                 Note(
                     content=content,
-                    timestamp=datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S"),
+                    timestamp=datetime.strptime(
+                        timestamp, "%Y-%m-%d %H:%M:%S"),
                 )
             )
         db.session.add(new_person)

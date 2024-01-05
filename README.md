@@ -21,3 +21,15 @@ flask api project template
 * Leverage nested schemas with Marshmallow
 * Display related objects in the front end
 
+* Navigate a full-stack web development workflow
+* Structure an HTML file to act as the template of a single-page web application
+* Leverage the Jinja templating engine to render dynamic content
+* Use CSS to style the presentation of an application
+* Write JavaScript to add interactivity to an application
+* Leverage Ajax to make HTTP requests to the REST API
+
+### Next Steps
+* Add a control form to update or delete notes
+* Restyle the CSS to your own taste
+* Show creation and modification dates for people and notes
+* Implement pagination for your front end

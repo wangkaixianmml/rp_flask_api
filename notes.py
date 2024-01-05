@@ -16,6 +16,7 @@ def read_one(note_id):
             404, f"Note with ID {note_id} not found"
         )
 
+
 def create(note):
     person_id = note.get("person_id")
     person = Person.query.get(person_id)
@@ -44,6 +45,7 @@ def update(note_id, note):
     else:
         abort(404, f"Note with ID {note_id} not found")
 
+
 def delete(note_id):
     existing_note = Note.query.get(note_id)
 
@@ -53,4 +55,3 @@ def delete(note_id):
         return make_response(f"{note_id} successfully deleted", 204)
     else:
         abort(404, f"Note with ID {note_id} not found")
-

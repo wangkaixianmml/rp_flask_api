@@ -19,7 +19,7 @@ class Person(db.Model):
 
     __table_name__ = 'person'
     id = db.Column(db.Integer, primary_key=True)
-    lname = db.Column(db.String(32), unique=True)
+    lname = db.Column(db.String(32), nullable=False)
     fname = db.Column(db.String(32))
     timestamp = db.Column(
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
@@ -32,12 +32,14 @@ class Person(db.Model):
         order_by="desc(Note.timestamp)"
     )
 
+
 class NoteSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Note
         include_fk = True
         load_instance = True
         sqla_session = db.session
+
 
 class PersonSchema(ma.SQLAlchemyAutoSchema):
 
@@ -49,8 +51,8 @@ class PersonSchema(ma.SQLAlchemyAutoSchema):
         load_instance = True
         sqla_session = db.session
 
+
 person_schema = PersonSchema()
 people_schema = PersonSchema(many=True)
 
 note_schema = NoteSchema()
-
